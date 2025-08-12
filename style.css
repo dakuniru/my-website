@@ -1,55 +1,129 @@
+/* ベーススタイル */
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background-image: url('https://cdn.pixabay.com/photo/2017/09/14/22/42/milky-way-2750627_1280.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #f0f0ff;
-  text-shadow: 0 0 5px #000;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-header {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+/* ナビゲーション */
+nav {
+  background-color: #333;
   padding: 1em;
-  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
+  display: flex;
+  justify-content: center;
   margin: 0;
+  padding: 0;
 }
 
-nav ul li {
-  display: inline;
+nav li {
   margin: 0 1em;
 }
 
-a {
-  color: #aadfff;
+nav a {
+  color: #fff;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* セクション */
 section {
-  padding: 2em;
   max-width: 800px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  margin-bottom: 2em;
+  margin: 4em auto;
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* アニメーション用クラス */
+/* 見出し */
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #00bcd4;
+}
+
+h3 {
+  margin-top: 2em;
+  color: #666;
+}
+
+/* リスト */
+ul {
+  padding-left: 1.2em;
+}
+
+ul li {
+  margin-bottom: 0.5em;
+}
+
+/* リンク */
+a {
+  color: #0077cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* フォーム */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+button {
+  margin-top: 1.5em;
+  padding: 0.8em;
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+/* アニメーション */
 .slide-in {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.6s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .slide-in.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
